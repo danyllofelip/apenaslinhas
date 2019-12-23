@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title> 
+    <style>
+        body
+        {
+            background-color: #1d1f20;
+            transform: translate(0,0,0);
+            font-family: tahoma;
+        }
+
+        .cards
+        {
+            width: 100%;
+            height: 100vh;
+            font-size: 0;
+        }
+
+        .card
+        {
+            display: inline-block;
+            vertical-align: middle;
+            position: absolute;
+            overflow: hidden;
+            width: 33.33333%;
+            height: 33.33333%;
+            cursor: pointer;
+            transition: all 300ms linear, opacity 300ms linear, filter 300ms linear;
+        }
+
+        .card.is-active
+        {
+            z-index: 1;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            transform: rotateY(180deg);
+            filter: none;
+        }
+
+        .card.is-active .card-front
+        {
+            opacity: 0;
+            filter: none;
+        }
+
+        .card.is-active .card-back, .card.is-active .card-back-wrapper
+        {
+            opacity: 1;
+        }
+        .card.is-active .card-back-wrapper
+        {
+            transition: opacity 300ms 300ms linear;
+        }
+
+        .card-front, .card-back
+        {
+            width: 100%;
+            height: 100%;
+            transition: all 0ms 150ms linear;
+        }
+
+        .card-back
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            background-color: #111213;
+        }
+
+        .card-back p
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: 0;
+            font-size: 20px;
+            color: white;
+            transform: translate(-50%, -50%);
+            font-weight: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .card-back-wrapper
+        {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 100ms 0ms;
+            transform: rotateY(180deg);
+        }
+
+        .card:nth-child(1)
+        {
+            top: 0%;
+        }
+
+        .card:nth-child(1) + .card
+        {
+            top: 0%;
+        }
+
+        .card:nth-child(1) + .card + .card
+        {
+            top: 0%;
+        }
+
+        .card:nth-child(1) 
+        {
+            left: 0%;
+        }
+
+        .card:nth-child(1) .card-front
+        {
+            background-image: url(bg1.jpg);
+        }
+
+        .card:nth-child(2) 
+        {
+            left: 33.33333%;
+        }
+
+        .card:nth-child(2) .card-front
+        {
+            background-image: url(bg2.jpg);
+        }
+
+        .card:nth-child(3) 
+        {
+            left: 66.66667%;
+        }
+
+        .card:nth-child(4) 
+        {
+            top: 33.33333%;
+        }
+
+        .card:nth-child(3) .card-front
+        {
+            background-image: url(bg3.jpg);
+        }
+
+        .card:nth-child(4) + .card
+        {
+            top: 33.33333%;
+        }
+
+        .card:nth-child(4) + .card+ .card
+        {
+            top: 33.33333%;
+        }
+        
+        .card:nth-child(4) 
+        {
+            left: 0%;
+        }
+
+        .card:nth-child(4) .card-front
+        {
+            background-image: url(bg4.jpg);
+        }
+
+        
+        .card:nth-child(5) 
+        {
+            left: 33.33333%;
+        }
+
+        .card:nth-child(5) .card-front
+        {
+            background-image: url(bg5.jpg);
+        }
+
+        
+        .card:nth-child(6) 
+        {
+            left: 66.66667%;
+        }
+
+        .card:nth-child(6) .card-front
+        {
+            background-image: url(bg6.jpg);
+        }
+        
+        .card:nth-child(7) 
+        {
+            top: 66.66667%;
+        }
+
+        .card:nth-child(7) + .card
+        {
+            top: 66.66667%;
+        }
+
+        .card:nth-child(7) .card + .card
+        {
+            top: 66.66667%;
+        }
+
+        .card:nth-child(7) 
+        {
+            left: 0%;
+        }
+        .card:nth-child(7) .card-front
+        {
+            background-image: url(bg7.jpg);
+        }
+
+        .card:nth-child(8) 
+        {
+            left: 33.33333%;
+        }
+        .card:nth-child(8) .card-front
+        {
+            background-image: url(bg8.png);
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="cards">
+        <div class="card">
+            <div class="card-front">
+                <h2 class="card-titlle">Card Title</h2>
+            </div>
+            <div class="card-back">
+                <div class="card-back-wrapper">
+                    <p>
+                        Garota meiga com olhar apaixonante,que facilmente conquistou minha adimiração, não poderia descrever em palavras sua beleza e simpatia pois as palavras não são capazes de descrever gestos e perfeições tão enexplicaveis, que você possui sem precisar fazer nada e apenas seu dom que te faz ser essa mulher enexplicavel. Me escondo atrás dos tutorias tentando obsecivamente mostrar o quanto tu és sulficiente, uma uma mulher incrivel.                    
+                 </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-front">
+                <h2 class="card-titlle">Card Title</h2>
+            </div>
+            <div class="card-back">
+                <div class="card-back-wrapper">
+                    <p>
+                        Ela é um filme de ação com vários finais
+Ela é política aplicada e conversa banais
+Se ela estiver muito afim seja perspicaz
+Ela nunca vai deixar claro, então entenda sinais
+É o paraíso, suas curvas são cartões postais
+Não tem juízo, ou se já teve, hoje não tem mais
+Ela é o barco mais bolado que abordou no seu cais
+As outras falam, falam, ela chega e faz
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-front">
+                <h2 class="card-titlle">Card Title</h2>
+            </div>
+            <div class="card-back">
+                <div class="card-back-wrapper">
+                    <p>
+                        Acho que não da pra ver, mas essa é a foto que você me mandou com um O.B no nariz kkkk eu amo essa foto. Sabe, não sei pelo oq você esta passando, mas não esquece dos momentos felizes que tu teve, se agarra neles, ta bem ? Nem tem oq falar nessa foto, tu tem uma personalidade tão forte que nao da pra explicar, e eu amo isso em voce,
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-front">
+                <h2 class="card-titlle">Card Title</h2>
+            </div>
+            <div class="card-back">
+                <div class="card-back-wrapper">
+                    <p>
+                        Ahh meu bem, essa foto sempre vai ser a minha preferia. Tu é paixão, carinho, surto e fogo. Não consigo colocar em palavras oq admiro na pessoa que tu é, eu so olho e sinto uma mistura de orgulho com paixao, sabe ? 
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-front">
+                <h2 class="card-titlle">Card Title</h2>
+            </div>
+            <div class="card-back">
+                <div class="card-back-wrapper">
+                    <p>
+                        Tá, sempre que fiz algum tutorial foi falando o quanto te amo e quero ficar contigo, mas esse é diferente, esse é sobre você. Mulher forte e decidida, se acha tao insuficiente kkk mas sempre faz quem ta ao redor se encantar com TEU jeito. Tu não muda pra agradar e isso te faz ser uma pessoa totalmente confiavel. São detalhes unicos que te fazem ser tao cativante, juro que seu eu podusse te dava esse mundo so pra tu nunca se sentir sozinha.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-front">
+                <h2 class="card-titlle">Card Title</h2>
+            </div>
+            <div class="card-back">
+                <div class="card-back-wrapper">
+                    <p>
+                        UI. So coloquei essa foto pq ela me da arrepious kkkk mentira. So queria exaltar a mulher gostosa que tu é mrm, so em pensar em alguma coisa pra falar ja sobe um calorzinho. Imagino muitas coisas kkk mas vou deixar para um proximo tutorial. Ei, meu amor, tu é de uma intensidade que nao consigo descrever so querer sentir tlg.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-front">
+                <h2 class="card-titlle">Card Title</h2>
+            </div>
+            <div class="card-back">
+                <div class="card-back-wrapper">
+                    <p>
+                        Já que eu tenho que dizer,
+                        vou falar por que eu gostei de você 
+                        Você parece tao incrível,e é.
+                        Te conheço como ninguém,
+                        e eu me calei 
+                        quando vi você sorrir meu bem.
+
+                        Tu com esse teu jeito se tornou parte de min, parte dos meus dias e noites... af falei que nao iria comentar sobre o quanto tu é importante pra min kkk mas me da esse desconto.
+                        Tu vem como um sorriso de filme, eu lembro quando te vi na escada kkk juro que quase acreditei que tu nao era real. Foi uma sensação surrel, de esquecer ate como se respita. Quando fico te olhando eu sinto um espaço sendo preenchido tlg, é tao gostosinho olhar esse teu rosto, ficar viajando no teu sorriso, querer te descobrir olhando nos teus olhos rsrs é a melhor sensação que alguem pode querer sentir.
+                        Valorizo cada segundo ao teu lado, pq me sinto feliz.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-front">
+                <h2 class="card-titlle">Card Title</h2>
+            </div>
+            <div class="card-back">
+                <div class="card-back-wrapper">
+                    <p>
+                        Pegue um pedaço do meu coração e o faça seu
+                    </br>
+Então, quando estivermos separados
+</br>
+Você nunca vai estar sozinha
+</br>
+Você nunca vai estar sozinha
+</br>
+Você nunca vai estar sozinha
+
+</br>
+
+Quando sentir saudades feche seus olhos
+</br>
+Eu posso estar longe, mas nunca fui embora
+</br>
+Quando você adormecer à noite
+</br>
+Lembre-se que nós deitamos sob as mesmas estrelas.
+</br>
+</br>
+Então meu bem, sei que você nao esta na vibe, mas tu me conhece e sabe meu jeito, né. Saiba que sempre vou esta aqui pra te ajudar nos piores e comemorar os melhores momentos. Eu te amo com todas as letras e acho que isso nem é o suficiente pra te demonstrar isso. Queria expressar todos meu sentimentos por você so pra tu ter uma noção do quanto tu é especial. 
+</br>
+Te amo...
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="jquery.js"></script>
+    <script>
+        $('.card').on('click', function(){
+            $(this).toggleClass('is-active');
+        });
+    </script>
+</body>
+</html>
